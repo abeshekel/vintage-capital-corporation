@@ -1,19 +1,28 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+const header = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+
+function onScroll(){
+  if(!header) return;
+  header.classList.toggle('scrolled', window.scrollY > 24);
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+if(menuToggle && nav){
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
   });
 }
 
-const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
-
-const revealItems = document.querySelectorAll('.section-reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
-}, { threshold: 0.12 });
-revealItems.forEach((item) => observer.observe(item));
+},{ threshold:.12 });
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
