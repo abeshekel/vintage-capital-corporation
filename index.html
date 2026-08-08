@@ -765,8 +765,10 @@ try{
       var src = document.getElementById(btn.dataset.bio);
       if(!src) return;
       body.innerHTML = src.innerHTML;
-      body.scrollTop = 0;
       if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+      // must come AFTER opening: a hidden element has no layout, so setting
+      // scrollTop while it is closed does nothing and the old position returns
+      body.scrollTop = 0;
     });
   });
   dlg.querySelector('.bio-close').addEventListener('click', function(){ dlg.close(); });
