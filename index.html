@@ -10,17 +10,22 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===== YOUR ORIGINAL DESIGN TOKENS ===== */
+@font-face{font-family:'Serif stand-in';src:local('Times New Roman'),local('Times'),local('Liberation Serif');
+  size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:'Sans stand-in';src:local('Arial'),local('Helvetica Neue'),local('Liberation Sans');
+  size-adjust:98%;ascent-override:95%;descent-override:24%;line-gap-override:0%}
 :root{
   --navy:#040E22;--navy2:#071426;--black:#0d0d0f;--ivory:#f7f4ee;--paper:#fbfaf7;
   --stone:#d9d2c7;--slate:#69727f;--ink:#141416;--muted:#525962;
   --bronze:#b08a50;--bronze2:#8a7442;
   --line:rgba(176,138,80,.28);--line2:rgba(20,20,22,.14);
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'Libre Franklin',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:'Cormorant Garamond','Serif stand-in',Georgia,serif;
+  --sans:'Libre Franklin','Sans stand-in',system-ui,-apple-system,sans-serif;
   --max:1440px;--read:690px;--ease:cubic-bezier(.22,1,.36,1);
   /* vertical breathing room scales with screen HEIGHT, not width, so a short
      laptop does not get the same 140px band as a tall monitor */
