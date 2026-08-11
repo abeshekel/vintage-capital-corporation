@@ -14,8 +14,8 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===== YOUR ORIGINAL DESIGN TOKENS ===== */
@@ -117,8 +117,12 @@ h3{font-size:34px;line-height:1.05}
   transition:opacity .5s ease}
 .fhide .hero .inner{opacity:0}
 .fhide .site-header{opacity:0;transition:opacity .5s ease}
-.hero h1{font-size:clamp(46px,8.4vw,124px);line-height:.92;max-width:15ch;margin:0 auto;
-  font-weight:400;letter-spacing:-.045em}
+/* Light-on-dark type reads heavier than the same weight dark-on-light, so the
+   display weight drops to 300 here. Tracking tightens as the size grows —
+   large type needs less air between letters, not more. */
+.hero h1{font-size:clamp(46px,8.4vw,124px);line-height:.90;max-width:15ch;margin:0 auto;
+  font-weight:300;letter-spacing:-.052em;text-wrap:balance}
+@media(max-width:700px){.hero h1{font-weight:400;letter-spacing:-.042em;line-height:.94}}
 .hero p{max-width:620px;color:rgba(247,244,238,.78);font-size:19px;margin:34px auto 0}
 .hero-actions{display:flex;gap:18px;align-items:center;justify-content:center;
   margin-top:44px;flex-wrap:wrap}
