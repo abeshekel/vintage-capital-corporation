@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#071321"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="600" letter-spacing="1" fill="#F7F4EE">VCC</text>
-  <path d="M16 48h32" stroke="#B08A50" stroke-width="1"/>
+  <rect width="64" height="64" fill="#040E22"/>
+  <text x="32" y="43" text-anchor="middle" font-family="'Times New Roman',Times,Georgia,serif"
+        font-size="50" font-weight="500" fill="#F7F4EE">V</text>
+  <rect x="18" y="49" width="28" height="3.5" fill="#B08A50"/>
 </svg>
